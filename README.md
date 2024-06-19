@@ -1,2 +1,2 @@
 # pybrowser
-A browser written inPython
+A browser written in Python
