@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="一个轻快简洁的浏览器起始页。">
+  <title>StartPage</title>
+  <link rel="stylesheet" href="./css/style.01b8ba5c.css">
+  <link rel="shortcut icon" href="./img/头像.png">
+  <script src="./js/jquery.min.js"></script>
+</head>
+<body><svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;"><symbol id="icon-upload" viewBox="0 0 1316 1024"><path d="M1050.234 735.183H945.25V787.7h104.984v105.033h52.516V787.7h105.034v-52.517H1102.75V630.15h-52.516v105.033z m0-261.364a286.964 286.964 0 0 0-102.4 28.965c-0.195-119.125-0.195-227.28-0.195-227.035-44.959-96.549-121.612-11.46-136.046 6.631l-305.2 345.527-170.326-126.098a41.838 41.838 0 0 0-56.808 6.339L86.162 798.28a42.082 42.082 0 0 0 31.988 69.242c0.244 0 453.047-0.195 689.591-0.146 15.311 38.863 38.863 73.63 68.413 102.107H83.87c-46.128 0-83.87-37.937-83.87-83.87V80.408C0 34.182 37.742 0 83.87 0h879.08c46.08 0 87.284 34.182 87.284 80.165V473.77zM338.408 119.174a128.488 128.488 0 0 0-128.83 128.098 128.488 128.488 0 0 0 128.83 128.146A128.341 128.341 0 0 0 467.237 247.32a128.488 128.488 0 0 0-128.83-128.097z m738.157 878.543a236.3 236.3 0 1 1 0-472.649 236.3 236.3 0 0 1 0 472.65z"></path></symbol><symbol id="icon-baidu" viewBox="0 0 1024 1024"><path d="M 879.217 608.578 c -124.104 2.62744 -129.257 -82.4404 -129.257 -143.452 c 0 -63.8776 13.1713 -154.337 113.117 -154.337 c 99.7064 0 126.493 95.8506 126.493 127.619 c 0 32.0071 13.5808 167.44 -110.353 170.17 Z m -220.978 -281.819 c -83.5664 -10.5439 -102.436 -84.8631 -94.315 -159.387 c 6.68804 -60.9431 80.7683 -154.337 140.108 -140.927 c 59.1005 13.2396 113.151 90.4592 102.197 156.862 c -10.7145 66.4709 -64.3212 154.2 -147.99 143.452 Z m 0 186.105 c 75.4793 106.326 204.804 204.668 204.804 204.668 s 96.9084 74.5239 34.9757 218.01 c -61.8644 143.588 -288.268 68.9619 -288.268 68.9619 s -83.4982 -26.4792 -180.577 -5.22077 c -96.8401 21.2925 -180.372 13.2737 -180.372 13.2737 s -113.287 2.66157 -145.601 -138.163 c -32.28 -140.961 113.048 -218.146 123.934 -231.249 c 10.7828 -13.3761 86.1256 -63.7753 134.614 -143.588 c 48.5907 -79.6082 194.021 -143.452 296.492 13.3078 Z m -269.398 -196.547 c -62.5468 0 -113.185 -70.7704 -113.185 -158.227 c 0 -87.4905 50.638 -158.159 113.185 -158.159 c 62.4786 0 112.98 70.668 112.98 158.159 c 0 87.4564 -50.5015 158.227 -112.98 158.227 Z m -210.264 223.23 c -113.048 23.9541 -155.088 -104.688 -142.633 -164.983 c 0 0 13.342 -130.144 105.03 -138.163 c 72.8178 -6.24445 126.459 72.1012 132.021 116.972 c 3.34402 29.0725 18.7675 162.253 -94.4174 186.173 Z"></path></symbol><symbol id="icon-google" viewBox="0 0 1024 1024"><path d="M522.274133 438.818133V614.4h291.3792c-11.776 75.3152-88.029867 220.757333-291.3792 220.757333-175.3088 0-318.464-144.605867-318.464-323.157333 0-178.551467 143.189333-323.157333 318.464-323.157333 99.754667 0 166.570667 42.205867 204.8512 78.8992l139.3152-133.905067C776.96 50.602667 660.957867 0 522.274133 0 238.216533 0 8.533333 228.898133 8.533333 512c0 283.0848 229.6832 512 513.7408 512C818.7904 1024 1015.466667 816.264533 1015.466667 523.690667c0-33.621333-3.6352-59.306667-8.0896-84.872534H522.274133z"></path></symbol></svg>
+  <div class="bodyBox">
+    <div class="cover" id="cover"></div>
+    <img src="./img/PisgahNationalForest_ROW7154333793_1920x1080.jpg" alt="" class="bgIMG" id="bgIMG" style="opacity: 1;">
+    <main>
+      <div class="SearchBox">
+        <div id="time" class="time">
+          <h1 id="timeText" class="timeText">00:00</h1>
+        </div>
+        <input type="text" id="input0" autocomplete="off" placeholder="Search" class="">
+        <div class="searchOptBox" id="searchOptBox">
+          <div class="searchOpt selected" id="iconBaidu">
+            <svg class="icon">
+              <use xlink:href="#icon-baidu"></use>
+            </svg>
+          </div>
+          <div class="searchOpt" id="iconGoogle">
+            <svg class="icon">
+              <use xlink:href="#icon-google"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    <footer>
+      <span class="footerBox">
+       </span>
+    </footer>
+  </div>
+  <script src="./js/font_2184213_0qgzuosip2ls.js"></script>
+  <script src="./js/main.2290e170.js"></script>
+  <script>// 动态上传背景图片（转base64，存入ls）
+function imgChange(img) {
+  console.log("img.files:", img.files); // 生成一个文件读取的对象
+
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    // base64码 : e.target.result
+    console.log("e.target:", e.target, e.target.result);
+    bgIMG.src = e.target.result;
+    localStorage.setItem("bgIMG", e.target.result);
+  }; //发起异步读取文件请求，读取结果为data:url的字符串形式，
+
+
+  reader.readAsDataURL(img.files[0]);
+}</script>
+
+</body></html>
