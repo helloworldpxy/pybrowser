@@ -24,9 +24,9 @@
 
 ### 点击Releases，下载最新版本的zip压缩包，解压并运行Pybrowser.exe。
 
-##贡献
+## 贡献
 
-###欢迎提交Pull Request或Issue，共同完善本项目。
+### 欢迎提交Pull Request或Issue，共同完善本项目。
 
 ## 开源许可证
 
