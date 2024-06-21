@@ -42,6 +42,9 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.tabs)
         new_tab_action = QAction(QIcon('icons/add_page.png'), 'New Page', self)
         new_tab_action.triggered.connect(self.add_new_tab)
+         # 修改：在用户打开浏览器时运行JavaScript代码
+        self.browser.page().runJavaScript("cYear = 2024;")
+        self.browser.loadFinished.connect(lambda _: self.browser.page().runJavaScript("cYear = 2024;"))
         # 添加导航栏
         navigation_bar = QToolBar('Navigation')
         # 设定图标大小
