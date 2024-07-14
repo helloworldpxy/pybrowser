@@ -2,20 +2,60 @@
 # created by HelloWorld05
 # in 2024.06.19
 # modified by RedstoneLu
-# in 2024.06.21
+# in 2024.07.14
+#本次更新添加了多线程技术渲染，加载网页更流畅，更新了起始页
 
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 import sys
+import subprocess
 
+# 创建一个继承自QThread的类，用于在后台线程中加载网页
+class RenderThread(QThread):
+    # 初始化方法，接收要加载的URL
+    def __init__(self, url, parent=None):
+        super(RenderThread, self).__init__(parent)
+        self.url = url
+        self.page = QWebEnginePage()  # 创建一个网页对象
+
+    # 线程启动时调用的方法
+    def run(self):
+        self.page.load(self.url)  # 在线程中加载网页
+        self.page.loadFinished.connect(self.loadFinished)  # 当加载完成时，调用loadFinished方法
+
+    # 网页加载完成后的槽函数
+    def loadFinished(self, result):
+        self.page.toHtml(self.htmlReady)  # 获取网页的HTML内容
+
+    # 当网页的HTML内容准备就绪时的槽函数
+    def htmlReady(self, html):
+        self.html = html  # 存储HTML内容
+        self.finished.emit()  # 发出完成信号
+
+# 继承QWebEngineView的自定义WebView类
 class WebView(QWebEngineView):
     def __init__(self, parent):
         super().__init__(parent)
+        self.render_thread = None  # 初始化渲染线程为None
 
+    # 重写createWindow方法，用于新窗口的创建
     def createWindow(self, webWindowType):
         return main_window.browser
+
+    # 加载URL的方法，使用新的线程来加载
+    def loadUrl(self, url):
+        self.render_thread = RenderThread(url)  # 创建渲染线程
+        self.render_thread.finished.connect(self.renderFinished)  # 连接完成信号到槽函数
+        self.render_thread.start()  # 启动线程
+
+    # 当渲染线程完成时的槽函数
+    def renderFinished(self):
+        self.setHtml(self.render_thread.html)  # 设置网页内容
+        self.render_thread.quit()  # 停止线程
+        self.render_thread.wait()  # 等待线程结束
+        self.render_thread = None  # 清理线程引用
 
 class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -38,7 +78,7 @@ class MainWindow(QMainWindow):
         # 设置关闭按钮的槽
         self.tabs.tabCloseRequested.connect(self.close_current_tab)
          # 修改：默认加载本地HTML文件
-        self.add_new_tab(QUrl.fromLocalFile("/startpage/index.html"), label='Local HTML')
+        self.add_new_tab(QUrl("http://start.ltcld.com.cn/"), '首页')
         self.setCentralWidget(self.tabs)
         new_tab_action = QAction(QIcon('icons/add_page.png'), 'New Page', self)
         new_tab_action.triggered.connect(self.add_new_tab)
@@ -84,7 +124,7 @@ class MainWindow(QMainWindow):
         self.urlbar.setCursorPosition(0)
 
          # 添加新的标签页
-    def add_new_tab(self, qurl=QUrl.fromLocalFile("/startpage/index.html"), label='Local HTML'):
+    def add_new_tab(self, qurl=QUrl("http://start.ltcld.com.cn/"), label='NewTab'):
                 # 设置浏览器
         self.browser = WebView(self)
         self.browser.load(qurl)
