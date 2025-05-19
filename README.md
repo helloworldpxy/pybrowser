@@ -1,37 +1,101 @@
 # Pybrowser浏览器项目
 
+![License](https://img.shields.io/badge/License-GPL--3.0-green)
+
 ## 项目简介
-
-本项目是一个基于WebKit内核的浏览器应用，旨在为用户提供一个快速、稳定、安全的网络浏览体验。项目基于WebKit内核，支持HTML5等标准，具备良好的兼容性和性能。
-
-## 技术栈
-
-### WebKit内核，Python编程语言，Qt框架
+基于 PyQt5 和 QtWebEngine 构建的轻量级网页浏览器，支持多标签页浏览和基础导航功能。
 
 ## 功能特性
 
-- 快速启动：采用与Safari浏览器相同的WebKit内核，达到快速启动。
-- 页面渲染：基于WebKit内核，提供流畅的页面渲染体验。
-- UI设计：从头设计并绘制浏览器界面，以求简洁明了。
-- 多标签浏览：支持多标签浏览、切换，方便用户同时访问多个标签页
-- 开发者工具：提供开发者工具，助力开发者调试网页。
+- **多标签页管理**  
+  轻松打开、关闭和切换标签页。双击标签栏可新建标签页。
 
-## 获取源代码
-``` bash
-git clone https://github.com/helloworldpxy/pybrowser.git
-```
+- **导航控制**  
+  提供前进、后退、停止加载和刷新按钮，确保流畅的浏览体验。
 
-## 使用Pybrowser
+- **智能地址栏**  
+  自动补全 `http://`（若用户未输入协议头）。按回车键加载目标网页。
 
-点击Releases，下载最新版本的zip压缩包，解压并运行Pybrowser.exe。
+- **动态标签页标题**  
+  标签页标题会随当前网页标题自动更新。
 
-## 贡献
+- **简洁交互界面**  
+  直观的图标按钮和响应式布局，操作一目了然。
 
-欢迎提交Pull Request或Issue，共同完善本项目。
+## 安装指南
 
-## 开源许可证
+### 依赖环境
+- Python 3.6 或更高版本
+- PyQt5
+- PyQtWebEngine
 
-本项目采用GPL-3.0许可证，详情请查看 LICENSE 文件。
+### 安装步骤
+1. 克隆仓库：
+   ```bash
+   git clone https://github.com/helloworldpxy/pybrowser.git
+   cd pybrowser
+   ```
+
+2. 安装依赖库：
+   ```bash
+   pip install PyQt5 PyQtWebEngine
+   ```
+
+3. 确保 `icons` 目录包含所需图标文件（如 `back.png`, `forward.png` 等）。
+
+4. 运行浏览器：
+   ```bash
+   python browser.py
+   ```
+
+## 使用说明
+
+- **新建标签页**：点击导航栏的 "+" 按钮（若已实现）或双击标签栏。
+- **关闭标签页**：点击标签页的 "×"（至少保留一个标签页）。
+- **地址栏导航**：在地址栏输入 URL 后按回车键。
+
+## 许可证
+
+本项目基于 **GNU通用公共许可证 v3.0** 开源。  
+详见 [LICENSE](LICENSE) 文件。
+
+## 参与贡献
+
+欢迎贡献代码！  
+1. Fork 本仓库。  
+2. 创建功能分支：`git checkout -b feature/新功能名称`。  
+3. 提交代码：`git commit -m "添加新功能描述"`。  
+4. 推送分支：`git push origin feature/新功能名称`。  
+5. 提交 Pull Request。
+
+## 联系方式
+
+- **开发者**：Helloworldpxy
+- **GitHub**：[https://github.com/helloworldpxy](https://github.com/helloworldpxy)
+- **邮箱**：[hklpl@icloud.com](mailto:hklpl@icloud.com)
+
+## 致谢
+
+- 基于 [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) 和 [QtWebEngine](https://doc.qt.io/qt-5/qtwebengine-index.html) 构建。
+- 图标来源 [Flaticon](https://www.flaticon.com/)（如需署名请补充说明）。
+
+---
+
+🐞 提交问题至 [Issues](https://github.com/helloworldpxy/pybrowser/issues)。  
+⭐ 如果觉得项目有用，欢迎 Star 支持！
+
+---
+
+### 注意事项
+1. 请确保 `icons` 目录包含以下图标文件（示例需自行补充或替换）：
+   - `back.png`（后退）
+   - `forward.png`（前进）
+   - `stop.png`（停止）
+   - `renew.png`（刷新）
+   - `add_page.png`（新建标签页）
+   - `python.png`（窗口图标）
+2. 若图标来源需额外署名，请在 **致谢** 部分补充说明。
+3. 快捷键功能（如 `Ctrl+T`）需在代码中实现后更新说明。
 
 ## 联系
 
