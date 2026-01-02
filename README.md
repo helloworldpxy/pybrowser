@@ -25,9 +25,9 @@
 ## 安装指南
 
 ### 依赖环境
-- Python 3.6 或更高版本
-- PyQt5
-- PyQtWebEngine
+- Python 3.7 或更高版本
+- PyQt5>=5.15.0
+- PyQtWebEngine>=5.15.0
 
 ### 安装步骤
 1. 克隆仓库：
@@ -41,7 +41,7 @@
    pip install PyQt5 PyQtWebEngine
    ```
 
-3. 确保 `icons` 目录包含所需图标文件（如 `back.png`, `forward.png` 等）。
+3. 确保 `icons` 目录包含所需图标文件（如 `back.png`, `forward.png` 等）。（v2.0版本不需要icons目录）
 
 4. 运行浏览器：
    ```bash
