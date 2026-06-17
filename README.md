@@ -14,7 +14,7 @@
 > 如需将本项目用于比赛用途，请联系作者获取授权：[hklpl@icloud.com](mailto:hklpl@icloud.com)
 
 > 📢 **维护说明**
-> 在 v3.0 版本发布之前，PyBrowser 仅进行 **功能稳定性方面的维护**，所有 UI 和功能的更新均在 [NTPyBrowser](https://github.com/helloworldpxy/pybrowser)（基于 PySide6 的新架构版本）上推出。
+> 在 v3.0 版本发布之前，PyBrowser 仅进行 **功能稳定性方面的维护**，所有 UI 和功能的更新均在 [NTPyBrowser](https://github.com/helloworldpxy/ntpybrowser)（基于 PySide6 的新架构版本）上推出。
 > 追求 **稳定性的用户请选择 PyBrowser**，追求 **新功能和新 UI 的用户请选择 NTPyBrowser**。
 > 预计在 v3.0 版本，NTPyBrowser 的改进将并入 PyBrowser 主线，届时 NTPyBrowser 项目将停止更新。
 
