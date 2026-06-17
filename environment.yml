@@ -1,0 +1,14 @@
+# PyBrowser v2.5 - Conda 环境配置文件
+# 使用方法: conda env create -f environment.yml
+# 激活环境: conda activate pyb
+
+name: pyb
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - PyQt5>=5.15.0
+    - PyQtWebEngine>=5.15.0
